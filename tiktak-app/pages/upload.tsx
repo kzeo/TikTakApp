@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { FaCloudUploadAlt } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
 import axios from 'axios'
-
+import { BASE_URL } from '../utils'
 import useAuthStore from '../store/authStore'
 import { client } from '../utils/client'
 import { topics } from '../utils/constants'
@@ -67,7 +67,7 @@ const Upload = () => {
         topic: category,
       }
 
-      await axios.post('http://localhost:3000/api/post', document)
+      await axios.post(`${BASE_URL}/api/post`, document)
       router.push('/')
     }
   }
