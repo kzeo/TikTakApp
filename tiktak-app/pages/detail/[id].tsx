@@ -59,21 +59,20 @@ const Detail = ({ postDetails }: IProps) => {
   const addComment = async (e: { preventDefault: () => void }) => {
     e.preventDefault()
 
-    if (userProfile && comment) {
-      setIsPostingComment(true)
+    if (userProfile) {
+      if (comment) {
+        setIsPostingComment(true)
+        const { data } = await axios.put(`${BASE_URL}/api/post/${post._id}`, {
+          userId: userProfile._id,
+          comment,
+        })
 
-      const { data } = await axios.put(`${BASE_URL}/api/post/${post._id}`, {
-        userId: userProfile._id,
-        comment,
-      })
-
-      setPost({ ...post, comments: data.comments })
-      setComment('')
-      setIsPostingComment(false)
+        setPost({ ...post, comments: data.comments })
+        setComment('')
+        setIsPostingComment(false)
+      }
     }
   }
-
-  if (!post) return null
 
   return (
     <div className="flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap">
@@ -174,10 +173,10 @@ export const getServerSideProps = async ({
 }: {
   params: { id: string }
 }) => {
-  const { data } = await axios.get(`${BASE_URL}/api/post/${id}`)
+  const res = await axios.get(`${BASE_URL}/api/post/${id}`)
 
   return {
-    props: { postDetails: data },
+    props: { postDetails: res.data },
   }
 }
 
