@@ -8,7 +8,7 @@ interface IProps {
 
 const NoResults = ({ text }: IProps) => {
   return (
-    <div className="flex flex-col justify-center items-center h-full w-fl">
+    <div className="flex flex-col justify-center items-center h-full w-full">
       <p className="text-8xl">
         {text === 'No comments yet' ? <BiCommentX /> : <MdOutlineVideocamOff />}
       </p>
