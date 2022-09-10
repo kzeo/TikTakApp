@@ -8,8 +8,10 @@ projectId: 'put your sanity projectId',
 
 In root folder create .env.development:
 
-NEXT_PUBLIC_SANITY_TOKEN =
-NEXT_PUBLIC_GOOGLE_API_TOKEN =
+NEXT_PUBLIC_SANITY_TOKEN = <PUT TOKEN>
+  
+NEXT_PUBLIC_GOOGLE_API_TOKEN = <PUT TOKEN>
+  
 NEXT_PUBLIC_BASE_URL = http://localhost:3000
 
 Sanity token - use 'sanity start' command into sanity-backend folder and go to Manage project/API/Tokens.
