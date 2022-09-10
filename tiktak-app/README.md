@@ -4,7 +4,7 @@ Installation:
 
 Open tiktak-app/utils/client.ts
 
-projectId: '<put your projectId>',
+projectId: 'put your sanity projectId',
 
 In root folder create .env.development:
 
