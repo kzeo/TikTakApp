@@ -8,9 +8,9 @@ projectId: 'put your sanity projectId',
 
 In root folder create .env.development:
 
-NEXT_PUBLIC_SANITY_TOKEN = <PUT TOKEN>
+NEXT_PUBLIC_SANITY_TOKEN = PUT TOKEN
   
-NEXT_PUBLIC_GOOGLE_API_TOKEN = <PUT TOKEN>
+NEXT_PUBLIC_GOOGLE_API_TOKEN = PUT TOKEN
   
 NEXT_PUBLIC_BASE_URL = http://localhost:3000
 
